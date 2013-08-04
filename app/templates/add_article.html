@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}Hi{% endblock %}
+
+{% block css %}
+<link rel='stylesheet' href='/static/css/basic.css' type='text/css'>
+{% endblock %}
+
+{% block content %}
+
+<h1>Articles</h1>
+
+<span class="glyphicon glyphicon-globe"></span>
+
+{{ article_url }}
+
+{% if pic_urls %}
+    {% for pic_url in pic_urls %}
+        <img src="{{ pic_url }}">
+    {% endfor %}
+{% endif %}
+
+<!--
+<form method="POST" action="{% url add_article %}">
+{% csrf_token %}
+<div class="row">
+    <div class="col-lg-6">
+        <div class="input-group">
+            <input type="text" class="form-control" name="article_link">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-plus"></span></button>
+            </span>
+        </div>
+    </div>
+</div>
+</form>
+-->
+
+{% endblock %}
+
